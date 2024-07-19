@@ -1,0 +1,117 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+ 
+.headers {
+    width: 100%;
+    text-align: center;
+}
+ 
+h1 {
+    font-size: 25px;
+}
+ 
+button {
+    background-color: black;
+    color: white;
+    align-content: center;
+    text-align: center;
+    border-radius: 10px;
+}
+ 
+button:hover {
+    background-color: white;
+    color: black;
+}
+ 
+.map-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+ 
+    height: 550px;
+    width: 80%;
+    outline: solid;
+    outline-color: black;
+    outline-width: 2px;
+}
+ 
+#scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+ 
+    width: 20%;
+}
+ 
+.first_info_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+    width: 100%;
+}
+ 
+.second_info_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+    width: 100%;
+}
+ 
+.info_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    height: 500px;
+ 
+    outline: solid;
+    outline-color: black;
+    outline-width: 2px;
+ 
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ 
+.info_title {
+    font-size: 20px;
+}
+ 
+.main_info_paragraph {
+    font-size: 14px;
+}
+ 
+.main_images {
+    width: 100%;
+}
+ 
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;              
+    background-color:black;
+    height: 1px;
+}
+ 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+    background-color: white;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: darkgrey;
+}

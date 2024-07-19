@@ -1,0 +1,17 @@
+{
+    "name": "James Test Extension",
+    "version": "1.0.0",
+    "description": "for testing chrome extension deving",
+    "manifest_version": 3,
+    "author": "Kel, Brady, Rohan, James",
+    "action":{
+        "default_popup": "index.html",
+        "defualt_title": "Puppy Mill Buster"
+    },
+    "content_scripts": [
+        {
+            "js": ["contentscript.js"],
+            "matches": ["https://puppies.com/listings/*"]
+        }
+    ]
+}
