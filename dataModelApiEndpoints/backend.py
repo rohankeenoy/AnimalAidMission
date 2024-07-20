@@ -4,7 +4,7 @@ from services.generateReport import report_bp
 from services.mapService import map_bp
 from services.modelService import model_bp
 
-
+neighbors = None
 pawPatrol = Flask(__name__)
 #blueprints for backend services
 pawPatrol.register_blueprint(data_bp, url_prefix='/data')

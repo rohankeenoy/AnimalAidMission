@@ -44,10 +44,10 @@ def getGeocode(address):
         return None
 
 # Takes in address data and calculates the nearest neighbors.
-# Checks the data to see if they are unlicensed or not. If at least 5 percent points don't have a license
 # Returns the info of NN from the dataframe and the lat longs of the predicted point.
 @model_bp.route('/predict', methods=['GET'])
 def predict():
+    global neighbors
     data = pd.read_csv(os.path.join(os.path.dirname(__file__), 'geoCodedBenjiData.csv'))
     df = pd.DataFrame(data)
     address = request.args.get("address", type=str)
@@ -65,7 +65,7 @@ def predict():
  # Get information about nearest neighbors from the dataframe
     nearest_neighbors_info = []
     for i in range(len(index[0])):
-        row_index = index[0][i]  # Accessing the first dimension of index and dist
+        row_index = index[0][i]  
         distance = dist[0][i]
         print(row_index)
         
@@ -84,5 +84,17 @@ def predict():
         },
         "nearest_neighbors": nearest_neighbors_info
     }
+    predicted_point_df = pd.DataFrame([response['predicted_point']])
+    predicted_point_filename = 'predicted_point.csv'
+    predicted_point_path = os.path.join(os.path.dirname(__file__), predicted_point_filename)
+    predicted_point_df.to_csv(predicted_point_path, index=False)
+    
+    
+    nearest_neighbors_df = pd.DataFrame(response['nearest_neighbors'])
+    nearest_neighbors_filename = 'nearest_neighbors.csv'
+    nearest_neighbors_path = os.path.join(os.path.dirname(__file__), nearest_neighbors_filename)
+    nearest_neighbors_df.to_csv(nearest_neighbors_path, index=False)
     
     return jsonify(response)
+
+
