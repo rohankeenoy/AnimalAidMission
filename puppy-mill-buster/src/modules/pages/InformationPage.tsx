@@ -1,6 +1,7 @@
 import { Navbar } from "./Navbar"
 import puppymill from '../../images/10411055_988376961195626_3410563990991464344_n.jpg';
-import missouriMap from '../../images/Missouri_County_Map.png';
+import missouriMap from '../../images/Missouri_County_Map.png'
+//import missouriMap from '../../images/county_map';
 
 export const InformationPage =() => {
     //the css isn't working how I would like, here's a link for later
