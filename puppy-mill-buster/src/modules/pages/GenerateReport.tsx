@@ -2,26 +2,21 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Navbar} from './Navbar'; 
 
-export const GenerateReport = () => {
-  const [isDataLoaded, setIsDataLoaded] = useState(false);
-
-  const getData = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/report/getTheVis');
-      console.log(response.data); // Log the response from Flask
-
-      // Check if the response indicates success (adjust as per your API response structure)
-      if (response.status === 200 && response.data.message === 'CSV files loaded successfully') {
-        setIsDataLoaded(true);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
+export const GenerateReport =() => {
+    const getData = async () => {
+        //I have no idea if this will work. Do we need a state to save the data?
+        axios({
+            url: "https://localhost:5000/model/predict?address=611 Gravois Rd, Fenton, MO, 63026",
+            method: "GET"
+        })
+        .then((res) => {console.log(res)})
+        
+        .catch((err) => {console.log(err)})
     }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+    
+    useEffect(() => {
+        getData()
+    }, [])
 
   return (
     <>
