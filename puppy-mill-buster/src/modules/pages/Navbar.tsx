@@ -7,11 +7,11 @@ export const Navbar = () => {
             <div className="w3-bar w3-white w3-padding w3-card">
                 <button className="w3-bar-item w3-button"
                     onClick={() => navigate('/')}
-                >Puppy Mill Information</button>
+                >Paw Print Surveillance</button>
                 <div className="w3-right w3-hide-small">
                     <button className="w3-bar-item w3-button"
-                        onClick={() => navigate('/hobbies')}
-                    >Generate Report</button>
+                        onClick={() => navigate('/report')}
+                    >View Report</button>
                 </div>
             </div>
         </div>

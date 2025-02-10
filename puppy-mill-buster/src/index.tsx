@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <InformationPage />
   },
   {
-    path: '/hobbies',
+    path: '/report',
     element: <GenerateReport />
   }
 ])

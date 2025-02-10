@@ -48,9 +48,11 @@ def getGeocode(address):
 @model_bp.route('/predict', methods=['GET'])
 def predict():
     global neighbors
+    print("in route")
     data = pd.read_csv(os.path.join(os.path.dirname(__file__), 'geoCodedBenjiData.csv'))
     df = pd.DataFrame(data)
     address = request.args.get("address", type=str)
+    print(f"Adress is {address}")
     if not address:
         return jsonify({"error": "invalid address"}), 400
     

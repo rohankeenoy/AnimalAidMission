@@ -1,5 +1,8 @@
 import { Navbar } from "./Navbar"
 import puppymill from '../../images/10411055_988376961195626_3410563990991464344_n.jpg';
+import logo from '../../images/pawPrintSurv.gif'
+import '../../App.css'
+
 import missouriMap from '../../images/Missouri_County_Map.png'
 //import missouriMap from '../../images/county_map';
 
@@ -10,11 +13,20 @@ export const InformationPage =() => {
     <>
         <Navbar />
 
-        <header className="w3-display-container w3-content w3-wide" style={{maxWidth:"1600px", minWidth:"500px"}} id="home">
-            <img className="w3-image" src={puppymill} alt="A Puppy Mill" width="1600" height="800"/>
-            <div className="w3-display-bottomleft w3-padding-large w3-opacity">
+        <div className="w3-row w3-padding-64" id="menu" style={{ display: "flex", alignItems: "center" }}>
+                <div className="w3-col l6 w3-padding-large">
+                    <h1 className="w3-center">Welcome to Paw Print Surveillance.</h1>
+                    <br />
+                    <p className="w3-large">
+                        Paw print surveillance aims to keep dogs safe and dog breeding cruelty-free by helping potential puppy-parents make informed decisions about the conditions their animal was bred in.
+                    </p>
+                </div>
+                <div className="w3-col l6 w3-padding-large">
+                    <img src={logo} className="w3-round w3-image w3-opacity-min" title="Map of Missouri" style={{ width: "100%" }} alt="A heatmap of Missouri based on puppy mill data" />
+                </div>
             </div>
-        </header>
+            <hr />
+
 
         <div className="w3-content" style={{maxWidth: "1100px"}}>
             <div className="w3-row w3-padding-64">

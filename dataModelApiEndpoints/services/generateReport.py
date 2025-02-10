@@ -23,23 +23,22 @@ def getTheVis():
     
     print("head",NN.head())
     print("pp",pp.head())
-    plt.figure(figsize=(10, 8))
+    '''plt.figure(figsize=(10, 8))
         
     plt.scatter(nearestNeighbors['Longitude'], nearestNeighbors['Latitude'], color='blue', label='Nearest Neighbors')
         
     plt.scatter(pp['longitude'], pp['latitude'], color='red', label='Viewed Puppy')
         
-        # Set labels and title
+        
     plt.xlabel('Longitude')
     plt.ylabel('Latitude')
     plt.title('Geographical Points')
         
         # Add legend
-    plt.legend()
+    plt.legend()'''
     combined_df = pd.concat([NN, pp], ignore_index=True)
-    fig = px.scatter_mapbox(combined_df, lat="Latitude", lon="Longitude",color_discrete_sequence=["blue", "red"], zoom=3, height=600)
-    
-    fig.write_image("plot_combined.png")
+    '''fig = px.scatter_mapbox(combined_df, lat="Latitude", lon="Longitude",color_discrete_sequence=["blue", "red"], zoom=3, height=600)
+    fig.write_image("plot_combined.png")'''
     if not pp.empty and not nearestNeighbors.empty:
         return jsonify({"message": "CSV files loaded successfully"}), 200
     else:

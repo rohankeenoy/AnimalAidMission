@@ -2,7 +2,7 @@
 const divHTMLEle = document.querySelectorAll("div");
 const dogInfoMainArr = [];
 let dogInfoArr = [];
-let webpageURL = new URL("http://localhost:3000");
+let webpageURL = new URL("http://localhost:5000/model/predict");
 
 function getDogInfo() {
   const searchTextFemale = "Female, Born on ";
@@ -40,7 +40,20 @@ function main() {
   }
 }
 
-document.getElementById("main_button").addEventListener("click", (event) => {
+document.getElementById("add_report").addEventListener("click", (event) => {
   webpageURL.searchParams.append('address', "611 Gravois Rd, Fenton, MO 63026");
-  window.open(webpageURL, "_blank")
+  //removed the window.open so the page doesn't come up. 
+  //window.open(webpageURL, "_blank")
 });
+
+document.getElementById("report_button").addEventListener("click",(event) =>
+{
+  window.open("http://localhost:3000/report");
+  console.log("changing")
+});
+
+document.getElementById("main_button").addEventListener("click",(event) =>
+  {
+    window.open("http://localhost:3000/");
+  });
+  
