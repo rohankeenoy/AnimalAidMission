@@ -1,4 +1,9 @@
+If you are pulling:
+for extentsion: load into the extentsions on chrome.
 
+For server: cd to dataModelApiEndpoints and "python backend.py"
+
+For website: cd to ./puppy-mill-buster and "npm run start"
 
 ![image](https://github.com/user-attachments/assets/086dc490-ff3f-4657-8f0b-301ce71b2839)
 
