@@ -4,14 +4,22 @@
     "description": "This extension flags suspicous material on puppy adoption sites that suggest the seller may be a puppy mill.",
     "manifest_version": 3,
     "author": "Paw Print Surveillance: Kel, Brady, Rohan, James",
+    "background": {
+        "service_worker": "background.js"
+    },
     "action":{
         "default_popup": "index.html",
         "defualt_title": "Puppy Mill Buster"
     },
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "tabs"
+    ],
     "content_scripts": [
-        {
-            "js": ["contentscript.js", "contentscript2.js"],
-            "matches": ["https://puppies.com/listings/*", "https://puppies.com/find-a-puppy/*", "https://puppies.com/"]
+        {   
+            "matches": ["https://puppies.com/*", "https://puppies.com/listings/*", "https://puppies.com/find-a-puppy/*"],
+            "js": ["contentscript.js"]
         }
     ]
 }

@@ -1,1 +1,0 @@
-window.alert('This extension pops up on puppy adoption sites with suspicious material.\nWe hope this will help adopters make informed decisions on dog adoption sites.\nThis site is known to display posts of dogs from puppy mills, please use caution while browsing.')
